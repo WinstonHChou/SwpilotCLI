@@ -1,0 +1,20 @@
+# .NET build artifacts
+**/bin/
+**/obj/
+
+# SolidWorks interop DLLs — fetched from user's SW installation at install time
+Install/swpilotcli-install/src/SolidWorks.Interop.swconst.dll
+Install/swpilotcli-install/src/SolidWorks.Interop.swpublished.dll
+Install/swpilotcli-install/src/solidworkstools.dll
+
+# Claude Code local settings
+.claude/settings.local.json
+
+# Screenshot temp files
+temp/
+
+# Visual Studio cache
+**/.vs/
+
+# Personal notes — not for public repo
+SwpilotCLI Arthur notes.md

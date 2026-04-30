@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <AssemblyName>swpilotcli-install</AssemblyName>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <PublishSingleFile>true</PublishSingleFile>
+    <SelfContained>false</SelfContained>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- Exclude src\ — those files belong to the addin project, not this installer -->
+    <Compile Remove="src\**\*.cs" />
+    <EmbeddedResource Remove="src\**" />
+    <None Remove="src\**" />
+    <Content Remove="src\**" />
+  </ItemGroup>
+</Project>
