@@ -5,7 +5,7 @@ description: "YOUR EYES. Use this tool whenever you need to see the screen — d
 
 # Eye Screenshot
 
-Claude's eyes. Captures the full screen so Claude can see what is on the display.
+AI's eyes. Captures the full screen so the agent can see what is on the display.
 
 ## Prerequisites
 
@@ -44,4 +44,4 @@ Size: 1920x1080
 
 - Output file is always overwritten (latest screenshot only)
 - Part of the `swpilotcli-eye-*` vision toolkit
-- **Ignore the SwpilotCLI terminal panel** if visible in the screenshot — that is Claude's own interface. Focus only on other content on screen (SolidWorks, dialogs, files, etc.)
+- **Ignore the SwpilotCLI terminal panel** if visible in the screenshot — that is the AI agent's own interface. Focus only on other content on screen (SolidWorks, dialogs, files, etc.)

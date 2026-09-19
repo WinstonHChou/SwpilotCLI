@@ -8,7 +8,7 @@ None.
 
 `./temp/screenshot/screenshot.png`
 
-Path is relative to the SwpilotCLI project root (located by finding `CLAUDE.md` in parent directories).
+Path is relative to the SwpilotCLI project root (located by finding `CLAUDE.md` or `AGENTS.md` in parent directories).
 
 ## Return Codes
 

@@ -49,13 +49,13 @@ Unique parts: 3
 ### Preview before batch export
 ```
 User: 這個組合件有哪些零件？
-Claude: I'll list all parts using this tool.
+Agent: I'll list all parts using this tool.
 ```
 
 ### LLM-orchestrated batch XT export
 ```
 User: 把組合件所有零件轉成 XT
-Claude: First list parts with ListAssemblyParts, then call ExportPartToXt for each.
+Agent: First list parts with ListAssemblyParts, then call ExportPartToXt for each.
 ```
 
 ## Reference

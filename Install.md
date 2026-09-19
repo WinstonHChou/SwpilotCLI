@@ -1,6 +1,6 @@
 # SwpilotCLI Installation Guide
 
-> This document is for AI assistants (Claude Code, Codex, etc.) to follow when performing installation.
+> This document is for AI assistants (Claude Code, Codex, Pi Coding Agent, etc.) to follow when performing installation.
 > When the user says "install", "setup", or "reinstall SwpilotCLI", follow the steps below.
 
 ---
@@ -44,7 +44,7 @@ Get-ExecutionPolicy -Scope CurrentUser
 ```powershell
 Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
 ```
-- This is required for Claude and Codex CLI to run (both are installed as `.ps1` scripts via npm).
+- This is required for Claude, Codex, and Pi CLI to run (all are installed as `.ps1` scripts via npm).
 
 ---
 
@@ -176,6 +176,49 @@ Restart Claude Code and confirm `swapi-pilot` appears in `/mcp`.
 
 ```bash
 claude mcp remove swapi-pilot --scope user
+```
+
+---
+
+### Step 3.5: Configure swapi-pilot MCP (Pi Coding Agent)
+
+> Pi Coding Agent reads agent instructions from `AGENTS.md` and supports MCP natively.
+
+#### Check if already configured
+
+In Pi, MCP servers can be installed via the `mcp` tool. Check if `swapi-pilot` is already installed:
+
+```
+# In Pi, use the mcp tool to check:
+# mcp({ server: "swapi-pilot" })
+```
+
+- If `swapi-pilot` appears → **skip this step**, mark MCP status as ✅ (already configured)
+- If not → continue below
+
+#### Install swapi-pilot MCP
+
+In Pi, install the MCP server using the `mcp` tool:
+
+```
+mcp({ action: "install", url: "https://swapi-pilot.com/mcp", target: "global" })
+```
+
+- `target: "global"`: available to all projects
+- For project-level only, use `target: "project"`
+
+#### Verify
+
+```
+mcp({ server: "swapi-pilot" })
+```
+
+- Confirm that `swapi-pilot` appears in the list of available MCP servers.
+
+#### Remove (if needed)
+
+```
+mcp({ action: "uninstall", url: "https://swapi-pilot.com/mcp" })
 ```
 
 ---

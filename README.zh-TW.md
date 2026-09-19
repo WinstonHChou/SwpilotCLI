@@ -75,7 +75,7 @@ prompt:
 
 ### 前置條件
 
-1. 電腦必須要有 Claude Code CLI、Codex CLI，或其他可以在 CMD 下執行的 AI model for CLI。
+1. 電腦必須要有 **Claude Code CLI**、**Codex CLI**、**Pi Coding Agent**，或其他可以在 CMD 下執行的 AI model for CLI。
 2. 建議關閉沙盒模式，不然執行時容易報錯。
 3. 電腦必須要有 SolidWorks。
 
@@ -83,6 +83,7 @@ prompt:
 
 - Claude Code Pro
 - Codex Pro
+- Pi Coding Agent（開源免費）
 - SolidWorks
 
 ### 安裝步驟
@@ -110,7 +111,7 @@ prompt:
 2. 將 SolidWorks 本機相依 DLL 複製到安裝來源。
 3. .NET 8 SDK。
 4. .NET Framework Developer Pack。
-5. Codex MCP 設定，或 Claude MCP 設定。
+5. MCP 設定：swapi-pilot（支援 Claude Code CLI、Codex CLI 和 Pi Coding Agent）。
 6. PowerShell 執行原則。
 
 MCP 設定：
@@ -130,7 +131,7 @@ MCP 設定：
 
 心有不甘，所以我用 `swapi-pilot-solidworks-mcp` 作為底層架構，做了一個受眾大一點的 SwpilotCLI。
 
-但是我覺得因為 Claude CLI 跟 Codex CLI 也是需要月費，所以 SwpilotCLI 也不會有太多人關注就是了... Q_Q
+但是 Claude CLI 跟 Codex CLI 需要付費訂閱。Pi Coding Agent 對開源專案免費，讓 SwpilotCLI 能服務更廣泛的使用者。
 
 `swapi-pilot-solidworks-mcp` 專案網址：
 

@@ -36,5 +36,9 @@ dotnet run --project ./scripts/ExportPartToXt/ExportPartToXt.csproj -- "C:\path\
 ## Migration to Agent Skills
 
 ```bash
-cp -r ./main_tools/swpilotcli-export-part-to-xt ~/.claude/skills/
+# Pi Coding Agent
+cp -r ./sup_tools/swpilotcli-export-part-to-xt ~/.pi/skills/
+
+# Claude Code
+cp -r ./sup_tools/swpilotcli-export-part-to-xt ~/.claude/skills/
 ```

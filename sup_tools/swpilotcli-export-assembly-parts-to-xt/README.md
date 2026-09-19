@@ -31,8 +31,12 @@ dotnet run --project ./scripts/ExportAssemblyPartsToXt/ExportAssemblyPartsToXt.c
 
 ## Migration to Agent Skills
 
-Copy the entire directory to `~/.claude/skills/`:
+Copy the entire directory to the agent skills directory:
 
 ```bash
-cp -r ./main_tools/swpilotcli-export-assembly-parts-to-xt ~/.claude/skills/
+# Pi Coding Agent
+cp -r ./sup_tools/swpilotcli-export-assembly-parts-to-xt ~/.pi/skills/
+
+# Claude Code
+cp -r ./sup_tools/swpilotcli-export-assembly-parts-to-xt ~/.claude/skills/
 ```

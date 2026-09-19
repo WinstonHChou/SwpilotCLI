@@ -1,6 +1,6 @@
 # swpilotcli-eye-screenshot
 
-Take a screenshot for visual analysis by Claude. Part of the `swpilotcli-eye-*` vision toolkit.
+Take a screenshot for visual analysis by the AI agent. Part of the `swpilotcli-eye-*` vision toolkit.
 
 ## Directory Structure
 
@@ -36,5 +36,9 @@ dotnet run --project ./scripts/EyeScreenshot/EyeScreenshot.csproj -- sw
 ## Migration to Agent Skills
 
 ```bash
+# Pi Coding Agent
+cp -r ./main_tools/swpilotcli-eye-screenshot ~/.pi/skills/
+
+# Claude Code
 cp -r ./main_tools/swpilotcli-eye-screenshot ~/.claude/skills/
 ```

@@ -52,7 +52,7 @@ OK -> C:\Projects\Part001.x_t
 ### Export current part
 ```
 User: 把這個零件轉成 XT
-Claude: I'll export the active part using this tool.
+Agent: I'll export the active part using this tool.
 ```
 
 ### Per-item step in batch workflow

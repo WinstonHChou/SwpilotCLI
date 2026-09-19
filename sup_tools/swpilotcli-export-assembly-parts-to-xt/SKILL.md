@@ -50,13 +50,13 @@ Summary: exported=5, skipped=0, failed=0
 ### Export all parts in active assembly
 ```
 User: 把這個組合件的所有零件轉成 XT
-Claude: I'll batch export all parts using this tool.
+Agent: I'll batch export all parts using this tool.
 ```
 
 ### Check parts first, then export
 ```
 User: 先查有哪些零件，再批次轉 XT
-Claude: I'll use ListAssemblyParts first, then ExportPartToXt for each.
+Agent: I'll use ListAssemblyParts first, then ExportPartToXt for each.
 ```
 
 ## Reference

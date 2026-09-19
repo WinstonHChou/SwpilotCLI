@@ -23,6 +23,17 @@ dotnet run --project SolidWorksConsole/swpilotcli-install/SwpilotInstall.csproj
 dotnet run --project SolidWorksConsole/swpilotcli-install/SwpilotInstall.csproj -- uninstall
 ```
 
+## Agent Support
+
+SwpilotCLI integrates with Claude Code CLI, Codex CLI, Pi Coding Agent, and PowerShell.
+The terminal selector in the SolidWorks task pane supports the following agents:
+
+- **claude** — Claude Code CLI (session resume via `--resume`)
+- **codex** — Codex CLI (session resume via `resume`)
+- **pi** — Pi Coding Agent (launches with working directory)
+- **PS** — PowerShell terminal
+- **cmd** — Windows Command Prompt
+
 ## Notes
 
 - SolidWorks must be **closed** when building, otherwise the DLL will be locked

@@ -75,14 +75,15 @@ Create the folders if they do not already exist.
 
 ### Requirements
 
-1. Your computer must have Claude Code CLI, Codex CLI, or another AI model for CLI that can run from CMD.
+1. Your computer must have **Claude Code CLI**, **Codex CLI**, **Pi Coding Agent**, or another AI model for CLI that can run from CMD.
 2. I recommend turning off sandbox mode, because it can easily cause execution errors.
 3. Your computer must have SolidWorks installed.
 
 In short:
 
-- Claude Code Pro(pro$20)
-- Codex Pro(pro$20)
+- Claude Code Pro (pro$20)
+- Codex Pro (pro$20)
+- Pi Coding Agent (free for open-source)
 - SolidWorks($?)
 
 ### Installation Steps
@@ -111,7 +112,7 @@ Build, copy dependencies, register the add-in, configure Codex MCP, and verify t
 2. Copies the local SolidWorks dependency DLLs to the installation source.
 3. .NET 8 SDK.
 4. .NET Framework Developer Pack.
-5. Codex MCP configuration, or Claude MCP configuration.
+5. MCP configuration: swapi-pilot (supports Claude Code CLI, Codex CLI, and Pi Coding Agent).
 6. PowerShell execution policy.
 
 MCP configuration:
@@ -131,7 +132,7 @@ When I first designed `swapi-pilot-solidworks-mcp`, I thought many people would 
 
 I did not want that work to stop there, so I used `swapi-pilot-solidworks-mcp` as the foundation and built SwpilotCLI for a broader audience.
 
-That said, because Claude CLI and Codex CLI both require paid subscriptions, I do not expect SwpilotCLI to attract a huge audience either... Q_Q
+That said, Claude CLI and Codex CLI require paid subscriptions. Pi Coding Agent is free for open-source projects, making SwpilotCLI accessible to a wider audience.
 
 `swapi-pilot-solidworks-mcp` project:
 
@@ -142,6 +143,8 @@ https://github.com/arthurle3210/swapi-pilot-solidworks-mcp
 ## Tool Creation Example: sup_tools Workflow
 
 If you're using Codex CLI, make sure to set approvals to Full Access and permissions to Full Access.
+
+If you're using Pi Coding Agent, the tool integration is automatic - Pi reads `AGENTS.md` and supports MCP natively.
 
 Otherwise, it may run in sandbox mode, which can cause long delays or make the process hang.
 

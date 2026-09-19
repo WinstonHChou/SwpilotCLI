@@ -36,9 +36,14 @@ When updating the tool:
 
 ## Migration to Agent Skills
 
-This tool is designed to be directly compatible with Claude Agent Skills.
+This tool is designed to be directly compatible with Pi Coding Agent Skills and other AI agent frameworks.
 
-To migrate to `~/.claude/skills/`:
+To migrate to `~/.pi/skills/` (Pi Coding Agent):
+1. Copy the entire `swpilotcli-active-doc-info/` directory
+2. Paste into `~/.pi/skills/swpilotcli-active-doc-info/`
+3. No changes needed — the structure is identical
+
+To migrate to `~/.claude/skills/` (Claude Code):
 1. Copy the entire `swpilotcli-active-doc-info/` directory
 2. Paste into `~/.claude/skills/swpilotcli-active-doc-info/`
 3. No changes needed — the structure is identical

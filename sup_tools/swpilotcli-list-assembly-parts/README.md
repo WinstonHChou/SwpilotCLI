@@ -32,5 +32,9 @@ dotnet run --project ./scripts/ListAssemblyParts/ListAssemblyParts.csproj
 ## Migration to Agent Skills
 
 ```bash
-cp -r ./main_tools/swpilotcli-list-assembly-parts ~/.claude/skills/
+# Pi Coding Agent
+cp -r ./sup_tools/swpilotcli-list-assembly-parts ~/.pi/skills/
+
+# Claude Code
+cp -r ./sup_tools/swpilotcli-list-assembly-parts ~/.claude/skills/
 ```

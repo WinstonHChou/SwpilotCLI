@@ -99,7 +99,7 @@ namespace SwpilotCLIAddin
         private Label    lblHint;
 
         // ── Tool list ────────────────────────────────────────────────────────
-        private readonly string[] ToolNames = { "claude", "codex", "PS", "cmd" };
+        private readonly string[] ToolNames = { "claude", "codex", "pi", "PS", "cmd" };
         private string currentTool = "cmd";
 
         // ── About info (bump on each release) ────────────────────────────────
@@ -327,7 +327,7 @@ namespace SwpilotCLIAddin
             if (toolCombo.SelectedItem?.ToString() != tool)
                 toolCombo.SelectedItem = tool;
 
-            historyPanel.Visible = (currentTool == "claude" || currentTool == "codex");
+            historyPanel.Visible = (currentTool == "claude" || currentTool == "codex" || currentTool == "pi");
             if ((currentTool == "claude" || currentTool == "codex") && !string.IsNullOrEmpty(workingDirectory))
                 RefreshHistory();
 
@@ -351,7 +351,7 @@ namespace SwpilotCLIAddin
 
             toolCombo.Enabled = true;
 
-            if (currentTool == "claude" || currentTool == "codex")
+            if (currentTool == "claude" || currentTool == "codex" || currentTool == "pi")
             {
                 historyPanel.Visible = true;
                 RefreshHistory();
@@ -386,6 +386,8 @@ namespace SwpilotCLIAddin
                 {
                     if (currentTool == "codex")
                         PopulateCodexHistory(normalizedWorkingDir);
+                    else if (currentTool == "pi")
+                        PopulatePiHistory(normalizedWorkingDir);
                     else
                         PopulateClaudeHistory(normalizedWorkingDir);
                 }
@@ -474,6 +476,15 @@ namespace SwpilotCLIAddin
             {
                 historyCombo.Items.Add(session);
             }
+        }
+
+        private void PopulatePiHistory(string normalizedWorkingDir)
+        {
+            // Pi Coding Agent stores session data. Currently Pi supports session-based
+            // workflows via run_id, but direct session resume from history is not yet
+            // fully supported. Reserve this method for future Pi session loading.
+            // For now, the history panel shows "(New chat)" only.
+            return;
         }
 
         private static Dictionary<string, string> LoadHistoryDisplayMap()
@@ -792,6 +803,21 @@ namespace SwpilotCLIAddin
                 ".codex");
         }
 
+        private static string GetPiDataDirectory()
+        {
+            string envPath = Environment.GetEnvironmentVariable("PI_CONFIG_DIR");
+            if (!string.IsNullOrWhiteSpace(envPath))
+            {
+                string normalizedEnv = NormalizePathForCompare(envPath);
+                if (!string.IsNullOrEmpty(normalizedEnv))
+                    return normalizedEnv;
+            }
+
+            return Path.Combine(
+                Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),
+                ".pi");
+        }
+
         private static string PathToClaudeHash(string path)
         {
             return Regex.Replace(path, @"[^a-zA-Z0-9]", "-");
@@ -895,7 +921,8 @@ namespace SwpilotCLIAddin
             {
                 case "claude":   return "/exit";
                 case "codex":    return "/quit";
-                default:         return null; // PS/cmd - kill the shell if needed
+                case "pi":     return null;
+                default:       return null; // PS/cmd - kill the shell if needed
             }
         }
 
@@ -1108,6 +1135,8 @@ namespace SwpilotCLIAddin
                     }
 
                     return string.Format("Set-Location -LiteralPath '{0}'; codex{1}", codexLaunchDir, codexResumeArg);
+                case "pi":
+                    return string.Format("Set-Location -LiteralPath '{0}'; pi", safeDir);
                 case "cmd":
                     return string.Format("Set-Location -LiteralPath '{0}'; cmd", safeDir);
                 default:         return string.Format("Set-Location -LiteralPath '{0}'", safeDir);

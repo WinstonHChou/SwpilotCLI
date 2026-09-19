@@ -53,14 +53,14 @@ Modified: false
 ### Example 1: Get basic document info
 ```
 User: What file is currently open in SolidWorks?
-Claude: I'll check the active document for you.
+Agent: I'll check the active document for you.
 ```
 Run the tool and report back to user.
 
 ### Example 2: Verify before operations
 ```
 User: Is the current part saved before I modify it?
-Claude: I'll check the document state using this tool.
+Agent: I'll check the document state using this tool.
 ```
 
 ## Reference

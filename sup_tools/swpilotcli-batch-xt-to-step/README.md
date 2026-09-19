@@ -32,5 +32,9 @@ dotnet run --project ./scripts/BatchXtToStep/BatchXtToStep.csproj -- "C:\path\to
 ## Migration to Agent Skills
 
 ```bash
+# Pi Coding Agent
+cp -r ./sup_tools/swpilotcli-batch-xt-to-step ~/.pi/skills/
+
+# Claude Code
 cp -r ./sup_tools/swpilotcli-batch-xt-to-step ~/.claude/skills/
 ```

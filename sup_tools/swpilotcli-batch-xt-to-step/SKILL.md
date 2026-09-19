@@ -57,7 +57,7 @@ Summary: success=3, failed=0, total=3
 
 ```text
 User: 幫我把這個資料夾裡的 xt 都轉成 step
-Claude: I'll run the batch XT-to-STEP tool on that folder and write the STEP files next to the XT files.
+Agent: I'll run the batch XT-to-STEP tool on that folder and write the STEP files next to the XT files.
 ```
 
 ## Reference
